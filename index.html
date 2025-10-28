@@ -70,63 +70,66 @@
                                 <p>Select your preferred vehicle and dates</p>
                             </div>
                             <form id="bookingForm" class="booking-form">
-                                <div class="form-row">
-                                    <div class="form-group">
-                                        <label class="form-label">Pickup Location</label>
-                                        <select class="form-control" id="pickupLocation" required>
-                                            <option value="">Select Location</option>
-                                            <option value="khatushyamji">Toran Dawar Khatushyamji</option>
-                                            <option value="sikar">Sawali Circle Sikar</option>
-                                            <option value="reengus">Bheru Ji Mode Reengus</option>
-                                            <option value="jaipur">Sindhi Camp Jaipur</option>
-                                        </select>
-                                    </div>
-                                    <div class="form-group">
-                                        <label class="form-label">Return Location</label>
-                                        <select class="form-control" id="dropLocation" required>
-                                            <option value="">Select Location</option>
-                                            <option value="khatushyamji">Toran Dawar Khatushyamji</option>
-                                            <option value="sikar">Sawali Circle Sikar</option>
-                                            <option value="reengus">Bheru Ji Mode Reengus</option>
-                                            <option value="jaipur">Sindhi Camp Jaipur</option>
-                                            <option value="different">Different Location</option>
-                                        </select>
+                                <!-- Single Location Field -->
+                                <div class="form-group">
+                                    <label class="form-label">PICKUP &amp; RETURN LOCATION</label>
+                                    <select class="form-control" id="pickupLocation" required>
+                                        <option value="">Select Location</option>
+                                        <option value="khatushyamji">Toran Dawar Khatushyamji</option>
+                                        <option value="sikar">Sawali Circle Sikar</option>
+                                        <option value="reengus">Bheru Ji Mode Reengus</option>
+                                        <option value="jaipur">Sindhi Camp Jaipur</option>
+                                    </select>
+                                    <div class="location-policy-note">
+                                        <i class="fas fa-info-circle"></i>
+                                        <span>Vehicle must be returned to the same location</span>
                                     </div>
                                 </div>
+                                
+                                <!-- Pickup and Return Dates -->
                                 <div class="form-row">
                                     <div class="form-group">
-                                        <label class="form-label">Pickup Date</label>
+                                        <label class="form-label">PICKUP DATE</label>
                                         <input type="date" class="form-control" id="pickupDate" required>
                                     </div>
                                     <div class="form-group">
-                                        <label class="form-label">Return Date</label>
+                                        <label class="form-label">RETURN DATE</label>
                                         <input type="date" class="form-control" id="returnDate" required>
                                     </div>
                                 </div>
+                                
+                                <!-- Pickup and Return Times -->
                                 <div class="form-row">
                                     <div class="form-group">
-                                        <label class="form-label">Pickup Time</label>
+                                        <label class="form-label">PICKUP TIME</label>
                                         <input type="time" class="form-control" id="pickupTime" required>
                                     </div>
                                     <div class="form-group">
-                                        <label class="form-label">Vehicle Type</label>
-                                        <select class="form-control" id="vehicleType" required>
-                                            <option value="">Select Vehicle</option>
-                                            <option value="swift-new">New Swift</option>
-                                            <option value="swift-old">Old Swift</option>
-                                            <option value="thar">Mahindra Thar</option>
-                                            <option value="scorpio">Mahindra Scorpio</option>
-                                            <option value="venue">Hyundai Venue</option>
-                                        </select>
+                                        <label class="form-label">RETURN TIME</label>
+                                        <input type="time" class="form-control" id="returnTime" required>
                                     </div>
+                                </div>
+                                
+                                <!-- Vehicle Selection -->
+                                <div class="form-group">
+                                    <label class="form-label">SELECT VEHICLE</label>
+                                    <select class="form-control" id="vehicleType" required>
+                                        <option value="">Select Vehicle</option>
+                                        <option value="swift-new">New Swift</option>
+                                        <option value="swift-old">Old Swift</option>
+                                        <option value="dzire">Swift Dzire</option>
+                                        <option value="thar">Mahindra Thar</option>
+                                        <option value="scorpio">Mahindra Scorpio</option>
+                                        <option value="venue">Hyundai Venue</option>
+                                    </select>
                                 </div>
                                 <button type="submit" class="btn btn--primary btn--full-width btn--lg">
                                     <i class="fas fa-search"></i>
-                                    <span>Check Self-Drive Availability</span>
+                                    <span>CHECK AVAILABILITY</span>
                                 </button>
                                 <div class="booking-note" style="background: rgba(255, 215, 0, 0.2); border: 1px solid var(--color-yellow-primary); color: var(--color-yellow-primary);">
                                     <i class="fas fa-info-circle" style="color: var(--color-yellow-primary);"></i>
-                                    <span>Self-drive only • Transparent pricing • No driver charges</span>
+                                    <span>Same-location return policy • Self-drive only • No driver charges</span>
                                 </div>
                             </form>
                         </div>
