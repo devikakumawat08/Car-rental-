@@ -1095,6 +1095,47 @@ a:hover {
   border-color: var(--color-yellow-primary);
 }
 
+.btn--google-form {
+  background: var(--color-yellow-primary);
+  color: var(--color-black-primary);
+  border-color: var(--color-yellow-primary);
+  font-weight: 700;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  box-shadow: 0 4px 15px rgba(255, 215, 0, 0.4);
+  position: relative;
+  overflow: hidden;
+}
+
+.btn--google-form::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+  transition: left 0.5s ease;
+}
+
+.btn--google-form:hover {
+  background: var(--color-black-primary);
+  color: var(--color-yellow-primary);
+  border-color: var(--color-yellow-primary);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(255, 215, 0, 0.5);
+}
+
+.btn--google-form:hover::before {
+  left: 100%;
+}
+
+.btn--google-form i {
+  font-size: 16px;
+  animation: iconBounce 2s ease-in-out infinite;
+}
+
 .btn--sm {
   padding: var(--space-4) var(--space-12);
   font-size: var(--font-size-sm);
@@ -1352,7 +1393,36 @@ select.form-control {
   transform: scale(1.05);
 }
 
-/* ELITE BROTHERS Text Branding */
+/* Brand Logo Image Styling */
+.brand-logo-img {
+  height: 60px;
+  width: auto;
+  max-width: 350px;
+  object-fit: contain;
+  transition: all 0.3s ease;
+  filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.3));
+}
+
+.logo-link:hover .brand-logo-img {
+  transform: translateY(-2px);
+  filter: drop-shadow(0 4px 8px rgba(255, 215, 0, 0.4));
+}
+
+@media (max-width: 768px) {
+  .brand-logo-img {
+    height: 45px;
+    max-width: 200px;
+  }
+}
+
+@media (max-width: 480px) {
+  .brand-logo-img {
+    height: 40px;
+    max-width: 150px;
+  }
+}
+
+/* Legacy text branding styles - kept for potential future use */
 .logo-text-brand {
   display: flex;
   align-items: center;
@@ -1367,118 +1437,6 @@ select.form-control {
   letter-spacing: 2px;
   margin: 0;
   text-transform: uppercase;
-}
-
-.navbar.scrolled .logo-text-main {
-  color: var(--color-slate-900);
-  background: linear-gradient(135deg, #134e4a 0%, #0891b2 50%, #f59e0b 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-  text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.2);
-}
-
-.logo-text-main:hover {
-  transform: translateY(-2px);
-  text-shadow: 3px 3px 12px rgba(0, 0, 0, 0.6), 0 0 30px rgba(8, 145, 178, 0.5);
-}
-
-/* Enhanced ELITE BROTHERS Text Branding */
-.logo-text-main::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: linear-gradient(45deg, transparent, rgba(255, 255, 255, 0.1), transparent);
-  transform: translateX(-100%);
-  transition: transform 0.6s ease;
-}
-
-.logo-link:hover .logo-text-main::before {
-  transform: translateX(100%);
-}
-
-/* Dark theme adaptations for text */
-@media (prefers-color-scheme: dark) {
-  .logo-text-main {
-    background: linear-gradient(135deg, #ffffff 0%, #32d4aa 50%, #fbbf24 100%);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
-  }
-  
-  .navbar.scrolled .logo-text-main {
-    background: linear-gradient(135deg, #ffffff 0%, #0891b2 50%, #f59e0b 100%);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
-  }
-}
-
-[data-color-scheme="dark"] .logo-text-main {
-  background: linear-gradient(135deg, #ffffff 0%, #32d4aa 50%, #fbbf24 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-}
-
-[data-color-scheme="dark"] .navbar.scrolled .logo-text-main {
-  background: linear-gradient(135deg, #ffffff 0%, #0891b2 50%, #f59e0b 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-}
-
-/* Enhanced Spartan Military Branding */
-.logo-text-brand::before {
-  content: '★';
-  position: absolute;
-  left: -25px;
-  top: 50%;
-  transform: translateY(-50%);
-  color: #f59e0b;
-  font-size: 16px;
-  opacity: 0.8;
-  animation: sparkle 2s ease-in-out infinite;
-}
-
-.logo-text-brand::after {
-  content: '★';
-  position: absolute;
-  right: -25px;
-  top: 50%;
-  transform: translateY(-50%);
-  color: #f59e0b;
-  font-size: 16px;
-  opacity: 0.8;
-  animation: sparkle 2s ease-in-out infinite reverse;
-}
-
-@keyframes sparkle {
-  0%, 100% { opacity: 0.8; transform: translateY(-50%) scale(1); }
-  50% { opacity: 1; transform: translateY(-50%) scale(1.2); }
-}
-
-.logo-text-brand {
-  position: relative;
-}
-
-/* Military-style badge effect */
-.logo-text-main {
-  border: 2px solid transparent;
-  border-image: linear-gradient(45deg, rgba(8, 145, 178, 0.3), rgba(245, 158, 11, 0.3)) 1;
-  padding: 8px 16px;
-  border-radius: 4px;
-  backdrop-filter: blur(5px);
-}
-
-@media (max-width: 768px) {
-  .logo-text-brand::before,
-  .logo-text-brand::after {
-    display: none;
-  }
 }
 
 .tagline {
@@ -1789,6 +1747,18 @@ select.form-control {
   justify-content: flex-start;
 }
 
+.hero-cta .btn--google-form {
+  background: var(--color-yellow-primary);
+  color: var(--color-black-primary);
+  border: 2px solid var(--color-black-primary);
+}
+
+.hero-cta .btn--google-form:hover {
+  background: var(--color-white);
+  color: var(--color-black-primary);
+  border-color: var(--color-yellow-primary);
+}
+
 @media (max-width: 768px) {
   .hero-cta {
     justify-content: center;
@@ -1874,6 +1844,42 @@ select.form-control {
 
 .booking-note i {
   color: #10b981;
+}
+
+/* Location Policy Note */
+.location-policy-note {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 8px;
+  padding: 8px 12px;
+  background: rgba(255, 215, 0, 0.15);
+  border: 1px solid rgba(255, 215, 0, 0.3);
+  border-radius: 6px;
+  font-size: 12px;
+  color: var(--color-black-primary);
+  font-weight: 500;
+}
+
+.location-policy-note i {
+  color: var(--color-yellow-primary);
+  font-size: 14px;
+  flex-shrink: 0;
+}
+
+.location-policy-note span {
+  line-height: 1.4;
+}
+
+@media (max-width: 640px) {
+  .location-policy-note {
+    font-size: 11px;
+    padding: 6px 10px;
+  }
+  
+  .location-policy-note i {
+    font-size: 12px;
+  }
 }
 
 .booking-form h3 {
@@ -3380,6 +3386,154 @@ select.form-control {
   font-weight: 500;
 }
 
+/* Google Form CTA Section */
+.google-form-cta {
+  padding: 40px 0;
+  background: linear-gradient(135deg, rgba(255, 215, 0, 0.1), rgba(0, 0, 0, 0.05));
+  margin-bottom: 60px;
+  border-radius: 0;
+}
+
+.google-form-card {
+  max-width: 800px;
+  margin: 0 auto;
+  background: var(--color-yellow-primary);
+  border: 3px solid var(--color-black-primary);
+  border-radius: 0;
+  padding: 48px;
+  text-align: center;
+  box-shadow: 0 8px 30px rgba(255, 215, 0, 0.3);
+  position: relative;
+  overflow: hidden;
+}
+
+.google-form-card::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: linear-gradient(45deg, transparent, rgba(0, 0, 0, 0.05), transparent);
+  transform: rotate(45deg);
+  animation: shimmer 3s linear infinite;
+}
+
+@keyframes shimmer {
+  0% { transform: rotate(45deg) translate(-100%, -100%); }
+  100% { transform: rotate(45deg) translate(100%, 100%); }
+}
+
+.google-form-icon {
+  width: 80px;
+  height: 80px;
+  margin: 0 auto 24px;
+  background: var(--color-black-primary);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--color-yellow-primary);
+  font-size: 36px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+  animation: iconPulse 2s ease-in-out infinite;
+  position: relative;
+  z-index: 1;
+}
+
+@keyframes iconPulse {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.1); box-shadow: 0 8px 30px rgba(0, 0, 0, 0.4); }
+}
+
+.google-form-content {
+  position: relative;
+  z-index: 1;
+}
+
+.google-form-content h3 {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 32px;
+  font-weight: 900;
+  color: var(--color-black-primary);
+  margin-bottom: 16px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+.google-form-content p {
+  font-size: 16px;
+  color: var(--color-black-primary);
+  margin-bottom: 16px;
+  line-height: 1.6;
+}
+
+.google-form-content .form-details {
+  background: rgba(0, 0, 0, 0.1);
+  padding: 12px 20px;
+  border-radius: 8px;
+  margin: 20px 0;
+  font-size: 14px;
+  border: 1px solid rgba(0, 0, 0, 0.2);
+}
+
+.google-form-content .form-details strong {
+  font-weight: 700;
+}
+
+.google-form-content .btn--google-form {
+  margin: 24px 0 16px;
+  min-width: 280px;
+}
+
+.response-time {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(0, 0, 0, 0.2);
+  padding: 8px 16px;
+  border-radius: 20px;
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--color-black-primary);
+  margin-top: 8px;
+}
+
+.response-time i {
+  color: var(--color-black-primary);
+}
+
+@media (max-width: 768px) {
+  .google-form-card {
+    padding: 32px 24px;
+  }
+  
+  .google-form-content h3 {
+    font-size: 24px;
+  }
+  
+  .google-form-icon {
+    width: 60px;
+    height: 60px;
+    font-size: 28px;
+  }
+  
+  .google-form-content .btn--google-form {
+    min-width: auto;
+    width: 100%;
+  }
+}
+
+/* Footer Google Form */
+.footer-google-form {
+  margin-bottom: 20px;
+}
+
+.footer-google-form .btn--google-form {
+  width: 100%;
+  justify-content: center;
+}
+
 /* Contact Section */
 .contact {
   padding: 80px 0;
@@ -3629,6 +3783,46 @@ select.form-control {
   letter-spacing: 1px;
 }
 
+/* Footer Logo Styling */
+.footer-logo-link {
+  display: inline-block;
+  margin-bottom: var(--space-16);
+  transition: all 0.3s ease;
+}
+
+.footer-logo-link:hover {
+  transform: scale(1.05);
+}
+
+.footer-brand-logo-img {
+  height: 70px;
+  width: auto;
+  max-width: 300px;
+  object-fit: contain;
+  transition: all 0.3s ease;
+  filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.5));
+}
+
+.footer-logo-link:hover .footer-brand-logo-img {
+  transform: translateY(-2px);
+  filter: drop-shadow(0 4px 8px rgba(255, 215, 0, 0.5));
+}
+
+@media (max-width: 768px) {
+  .footer-brand-logo-img {
+    height: 55px;
+    max-width: 220px;
+  }
+}
+
+@media (max-width: 480px) {
+  .footer-brand-logo-img {
+    height: 45px;
+    max-width: 180px;
+  }
+}
+
+/* Legacy footer text branding styles */
 .footer-logo {
   display: flex;
   align-items: center;
@@ -3637,79 +3831,13 @@ select.form-control {
   transition: all 0.3s ease;
 }
 
-.footer-logo:hover {
-  transform: scale(1.05);
-}
-
-/* Footer Text Branding */
-.footer-logo-text {
-  display: flex;
-  align-items: center;
-  justify-content: flex-start;
-}
-
 .footer-logo-main {
-  font-family: var(--font-family-spartan);
+  font-family: 'Montserrat', sans-serif;
   font-size: clamp(20px, 3vw, 28px);
   font-weight: 800;
   color: white;
-  text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.6);
   letter-spacing: 1.5px;
   margin: 0;
-  background: linear-gradient(135deg, #ffffff 0%, #0891b2 50%, #f59e0b 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-  transition: all 0.3s ease;
-}
-
-.footer-logo:hover .footer-logo-main {
-  transform: translateY(-2px);
-  text-shadow: 3px 3px 10px rgba(0, 0, 0, 0.7);
-}
-
-/* Enhanced Footer Text Branding */
-.footer-logo-main::after {
-  content: '';
-  position: absolute;
-  bottom: -2px;
-  left: 0;
-  width: 0;
-  height: 2px;
-  background: linear-gradient(90deg, #0891b2, #f59e0b);
-  transition: width 0.4s ease;
-}
-
-.footer-logo:hover .footer-logo-main::after {
-  width: 100%;
-}
-
-.footer-logo-main {
-  position: relative;
-}
-
-/* Professional military-style text effects */
-.logo-text-main,
-.footer-logo-main {
-  text-transform: uppercase;
-  font-stretch: condensed;
-}
-
-/* Enhanced dark theme footer text */
-@media (prefers-color-scheme: dark) {
-  .footer-logo-main {
-    background: linear-gradient(135deg, #ffffff 0%, #32d4aa 50%, #fbbf24 100%);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
-  }
-}
-
-[data-color-scheme="dark"] .footer-logo-main {
-  background: linear-gradient(135deg, #ffffff 0%, #32d4aa 50%, #fbbf24 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
 }
 
 .footer-logo i {
