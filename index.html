@@ -1,0 +1,975 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Elite Brothers - Premium Self-Drive Vehicle Rentals | Rajasthan</title>
+    <meta name="description" content="Premium self-drive vehicle rentals across Rajasthan. No drivers - you drive yourself! 4 convenient locations with transparent 12hr/24hr pricing. Book now!">
+    <meta name="keywords" content="self drive rental, car rental, vehicle rental, Rajasthan, Jaipur, Sikar, no driver, Elite Brothers">
+    <meta property="og:title" content="Elite Brothers - Premium Self-Drive Vehicle Rentals">
+    <meta property="og:description" content="Premium self-drive vehicle rental services across Rajasthan with transparent pricing and no driver required">
+    <meta property="og:type" content="website">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="nav-brand">
+                <a href="#home" class="logo-link">
+                    <div class="logo-text-brand">
+                        <h1 class="logo-text-main">ELITE BROTHERS</h1>
+                    </div>
+                </a>
+                <p class="tagline">Premium Self-Drive Vehicle Rentals</p>
+            </div>
+            <div class="nav-menu" id="navMenu">
+                <a href="#home" class="nav-link">Home</a>
+                <a href="#vehicles" class="nav-link">Vehicles</a>
+                <a href="#services" class="nav-link">Services</a>
+                <a href="#about" class="nav-link">About</a>
+                <a href="#contact" class="nav-link">Contact</a>
+<a href="tel:+917073517615" class="btn btn--primary">Call Now</a>
+            </div>
+            <div class="nav-toggle" id="navToggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="container">
+            <div class="hero-content clearfix">
+                <div class="hero-text">
+                    <div class="hero-content-wrapper">
+                        <h1>PREMIUM SELF-DRIVE VEHICLE RENTALS</h1>
+                        <h2>Drive Your Own Adventure Across Rajasthan</h2>
+                        <p>Professional self-drive vehicle rental services with transparent pricing and comprehensive running limits. No drivers provided - complete freedom to explore at your own pace.</p>
+                    </div>
+                    <div class="hero-cta">
+                        <a href="#vehicles" class="btn btn--primary">VIEW VEHICLE FLEET</a>
+                        <a href="tel:+917073517615" class="btn btn--secondary">CONTACT US</a>
+                    </div>
+                    </div>
+                </div>
+                <div class="booking-form-container">
+                    <div class="card">
+                        <div class="card__body">
+                            <div class="booking-header">
+                                <h3>VEHICLE BOOKING</h3>
+                                <p>Select your preferred vehicle and dates</p>
+                            </div>
+                            <form id="bookingForm" class="booking-form">
+                                <div class="form-row">
+                                    <div class="form-group">
+                                        <label class="form-label">Pickup Location</label>
+                                        <select class="form-control" id="pickupLocation" required>
+                                            <option value="">Select Location</option>
+                                            <option value="khatushyamji">Toran Dawar Khatushyamji</option>
+                                            <option value="sikar">Sawali Circle Sikar</option>
+                                            <option value="reengus">Bheru Ji Mode Reengus</option>
+                                            <option value="jaipur">Sindhi Camp Jaipur</option>
+                                        </select>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="form-label">Return Location</label>
+                                        <select class="form-control" id="dropLocation" required>
+                                            <option value="">Select Location</option>
+                                            <option value="khatushyamji">Toran Dawar Khatushyamji</option>
+                                            <option value="sikar">Sawali Circle Sikar</option>
+                                            <option value="reengus">Bheru Ji Mode Reengus</option>
+                                            <option value="jaipur">Sindhi Camp Jaipur</option>
+                                            <option value="different">Different Location</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="form-row">
+                                    <div class="form-group">
+                                        <label class="form-label">Pickup Date</label>
+                                        <input type="date" class="form-control" id="pickupDate" required>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="form-label">Return Date</label>
+                                        <input type="date" class="form-control" id="returnDate" required>
+                                    </div>
+                                </div>
+                                <div class="form-row">
+                                    <div class="form-group">
+                                        <label class="form-label">Pickup Time</label>
+                                        <input type="time" class="form-control" id="pickupTime" required>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="form-label">Vehicle Type</label>
+                                        <select class="form-control" id="vehicleType" required>
+                                            <option value="">Select Vehicle</option>
+                                            <option value="swift-new">New Swift</option>
+                                            <option value="swift-old">Old Swift</option>
+                                            <option value="thar">Mahindra Thar</option>
+                                            <option value="scorpio">Mahindra Scorpio</option>
+                                            <option value="venue">Hyundai Venue</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <button type="submit" class="btn btn--primary btn--full-width btn--lg">
+                                    <i class="fas fa-search"></i>
+                                    <span>Check Self-Drive Availability</span>
+                                </button>
+                                <div class="booking-note" style="background: rgba(255, 215, 0, 0.2); border: 1px solid var(--color-yellow-primary); color: var(--color-yellow-primary);">
+                                    <i class="fas fa-info-circle" style="color: var(--color-yellow-primary);"></i>
+                                    <span>Self-drive only • Transparent pricing • No driver charges</span>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Vehicle Fleet -->
+    <section id="vehicles" class="vehicles clearfix">
+        <div class="container">
+            <div class="section-header">
+                <h2>VEHICLE FLEET</h2>
+                <p>Professional self-drive vehicles with comprehensive running limits and transparent pricing structure.</p>
+            </div>
+            
+            <div class="vehicle-filters">
+                <button class="filter-btn active" data-filter="all">All Vehicles</button>
+                <button class="filter-btn" data-filter="hatchback">Hatchbacks</button>
+                <button class="filter-btn" data-filter="sedan">Sedans</button>
+                <button class="filter-btn" data-filter="suv">SUVs</button>
+                <button class="filter-btn" data-filter="compact-suv">Compact SUVs</button>
+            </div>
+
+            <div class="vehicles-grid" id="vehiclesGrid">
+                <!-- New Swift -->
+                <div class="vehicle-card" data-category="hatchback">
+                    <div class="vehicle-image">
+                        <img src="https://pplx-res.cloudinary.com/image/upload/v1760469658/pplx_project_search_images/f27e0651624de01e263731dfc992168db66d1b87.png" alt="Red Maruti Swift 2024" class="vehicle-img">
+                        <div class="popular-badge">Popular</div>
+                    </div>
+                    <div class="vehicle-info">
+                        <h4>New Swift</h4>
+                        <p class="vehicle-category">Hatchback</p>
+                        <ul class="vehicle-features">
+                            <li><i class="fas fa-check"></i> AC</li>
+                            <li><i class="fas fa-check"></i> 4 Seater</li>
+                            <li><i class="fas fa-check"></i> Petrol</li>
+                            <li><i class="fas fa-check"></i> Manual/Auto</li>
+                        </ul>
+                        <div class="vehicle-price">
+                            <div class="pricing-tabs">
+                                <div class="price-tab active" data-period="daily">
+                                    <div class="price-header">Daily Rates</div>
+                                    <div class="price-grid">
+                                        <div class="price-option">
+                                            <span class="price">₹1,800<small>/12hrs</small></span>
+                                        </div>
+                                        <div class="price-option">
+                                            <span class="price">₹2,800<small>/24hrs</small></span>
+                                        </div>
+                                    </div>
+                                    <div class="km-limit">300km included daily</div>
+                                </div>
+                                <div class="price-tab" data-period="weekly">
+                                    <div class="price-header">Weekly Rate</div>
+                                    <div class="weekly-price">₹18,000<small>/7 days</small></div>
+                                    <div class="km-limit">1500km included weekly</div>
+                                </div>
+                            </div>
+                            <div class="pricing-toggle">
+                                <button class="toggle-btn active" data-period="daily">Daily</button>
+                                <button class="toggle-btn" data-period="weekly">Weekly</button>
+                            </div>
+                            <button class="btn btn--outline btn--sm">Book Self-Drive</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Old Swift -->
+                <div class="vehicle-card" data-category="hatchback">
+                    <div class="vehicle-image">
+                        <img src="https://pplx-res.cloudinary.com/image/upload/v1760469658/pplx_project_search_images/f27e0651624de01e263731dfc992168db66d1b87.png" alt="Maruti Swift" class="vehicle-img">
+                    </div>
+                    <div class="vehicle-info">
+                        <h4>Old Swift</h4>
+                        <p class="vehicle-category">Hatchback</p>
+                        <ul class="vehicle-features">
+                            <li><i class="fas fa-check"></i> AC</li>
+                            <li><i class="fas fa-check"></i> 4 Seater</li>
+                            <li><i class="fas fa-check"></i> Petrol</li>
+                            <li><i class="fas fa-check"></i> Manual</li>
+                        </ul>
+                        <div class="vehicle-price">
+                            <div class="pricing-tabs">
+                                <div class="price-tab active" data-period="daily">
+                                    <div class="price-header">Daily Rates</div>
+                                    <div class="price-grid">
+                                        <div class="price-option">
+                                            <span class="price">₹1,700<small>/12hrs</small></span>
+                                        </div>
+                                        <div class="price-option">
+                                            <span class="price">₹2,700<small>/24hrs</small></span>
+                                        </div>
+                                    </div>
+                                    <div class="km-limit">300km included daily</div>
+                                </div>
+                                <div class="price-tab" data-period="weekly">
+                                    <div class="price-header">Weekly Rate</div>
+                                    <div class="weekly-price">₹17,000<small>/7 days</small></div>
+                                    <div class="km-limit">1500km included weekly</div>
+                                </div>
+                            </div>
+                            <div class="pricing-toggle">
+                                <button class="toggle-btn active" data-period="daily">Daily</button>
+                                <button class="toggle-btn" data-period="weekly">Weekly</button>
+                            </div>
+                            <button class="btn btn--outline btn--sm">Book Self-Drive</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Swift Dzire -->
+                <div class="vehicle-card" data-category="sedan">
+                    <div class="vehicle-image">
+                        <img src="https://pplx-res.cloudinary.com/image/upload/v1756995471/pplx_project_search_images/8368ab3706dfb1caf5e19ce8b42f661a68d58e23.png" alt="White Maruti Swift Dzire" class="vehicle-img">
+                    </div>
+                    <div class="vehicle-info">
+                        <h4>Swift Dzire</h4>
+                        <p class="vehicle-category">Sedan</p>
+                        <ul class="vehicle-features">
+                            <li><i class="fas fa-check"></i> AC</li>
+                            <li><i class="fas fa-check"></i> 4 Seater</li>
+                            <li><i class="fas fa-check"></i> Petrol/Diesel</li>
+                            <li><i class="fas fa-check"></i> Spacious</li>
+                        </ul>
+                        <div class="vehicle-price">
+                            <div class="pricing-tabs">
+                                <div class="price-tab active" data-period="daily">
+                                    <div class="price-header">Daily Rates</div>
+                                    <div class="price-grid">
+                                        <div class="price-option">
+                                            <span class="price">₹1,900<small>/12hrs</small></span>
+                                        </div>
+                                        <div class="price-option">
+                                            <span class="price">₹2,900<small>/24hrs</small></span>
+                                        </div>
+                                    </div>
+                                    <div class="km-limit">300km included daily</div>
+                                </div>
+                                <div class="price-tab" data-period="weekly">
+                                    <div class="price-header">Weekly Rate</div>
+                                    <div class="weekly-price">₹19,000<small>/7 days</small></div>
+                                    <div class="km-limit">1500km included weekly</div>
+                                </div>
+                            </div>
+                            <div class="pricing-toggle">
+                                <button class="toggle-btn active" data-period="daily">Daily</button>
+                                <button class="toggle-btn" data-period="weekly">Weekly</button>
+                            </div>
+                            <button class="btn btn--outline btn--sm">Book Self-Drive</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Mahindra Thar -->
+                <div class="vehicle-card" data-category="suv">
+                    <div class="vehicle-image">
+                        <img src="https://pplx-res.cloudinary.com/image/upload/v1758993758/pplx_project_search_images/d75a2157d8e496659b96f27ff057ac6d23724857.png" alt="Black Mahindra Thar" class="vehicle-img">
+                    </div>
+                    <div class="vehicle-info">
+                        <h4>Mahindra Thar</h4>
+                        <p class="vehicle-category">SUV</p>
+                        <ul class="vehicle-features">
+                            <li><i class="fas fa-check"></i> 4WD</li>
+                            <li><i class="fas fa-check"></i> 4 Seater</li>
+                            <li><i class="fas fa-check"></i> Diesel</li>
+                            <li><i class="fas fa-check"></i> Adventure Ready</li>
+                        </ul>
+                        <div class="vehicle-price">
+                            <div class="pricing-tabs">
+                                <div class="price-tab active" data-period="daily">
+                                    <div class="price-header">Daily Rates</div>
+                                    <div class="price-grid">
+                                        <div class="price-option">
+                                            <span class="price">₹3,500<small>/12hrs</small></span>
+                                        </div>
+                                        <div class="price-option">
+                                            <span class="price">₹5,500<small>/24hrs</small></span>
+                                        </div>
+                                    </div>
+                                    <div class="km-limit">300km included daily</div>
+                                </div>
+                                <div class="price-tab" data-period="weekly">
+                                    <div class="price-header">Weekly Rate</div>
+                                    <div class="weekly-price">₹32,000<small>/7 days</small></div>
+                                    <div class="km-limit">1500km included weekly</div>
+                                </div>
+                            </div>
+                            <div class="pricing-toggle">
+                                <button class="toggle-btn active" data-period="daily">Daily</button>
+                                <button class="toggle-btn" data-period="weekly">Weekly</button>
+                            </div>
+                            <button class="btn btn--outline btn--sm">Book Self-Drive</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Mahindra Scorpio -->
+                <div class="vehicle-card" data-category="suv">
+                    <div class="vehicle-image">
+                        <img src="https://pplx-res.cloudinary.com/image/upload/v1760469682/pplx_project_search_images/43850c2f1113b6e90a1118d2a336fcdd38dfc00c.png" alt="Black Mahindra Scorpio N" class="vehicle-img">
+                        <div class="popular-badge">Popular</div>
+                    </div>
+                    <div class="vehicle-info">
+                        <h4>Mahindra Scorpio</h4>
+                        <p class="vehicle-category">SUV</p>
+                        <ul class="vehicle-features">
+                            <li><i class="fas fa-check"></i> 7 Seater</li>
+                            <li><i class="fas fa-check"></i> AC</li>
+                            <li><i class="fas fa-check"></i> Diesel</li>
+                            <li><i class="fas fa-check"></i> Family SUV</li>
+                        </ul>
+                        <div class="vehicle-price">
+                            <div class="pricing-tabs">
+                                <div class="price-tab active" data-period="daily">
+                                    <div class="price-header">Daily Rates</div>
+                                    <div class="price-grid">
+                                        <div class="price-option">
+                                            <span class="price">₹3,500<small>/12hrs</small></span>
+                                        </div>
+                                        <div class="price-option">
+                                            <span class="price">₹5,500<small>/24hrs</small></span>
+                                        </div>
+                                    </div>
+                                    <div class="km-limit">300km included daily</div>
+                                </div>
+                                <div class="price-tab" data-period="weekly">
+                                    <div class="price-header">Weekly Rate</div>
+                                    <div class="weekly-price">₹30,000<small>/7 days</small></div>
+                                    <div class="km-limit">1500km included weekly</div>
+                                </div>
+                            </div>
+                            <div class="pricing-toggle">
+                                <button class="toggle-btn active" data-period="daily">Daily</button>
+                                <button class="toggle-btn" data-period="weekly">Weekly</button>
+                            </div>
+                            <button class="btn btn--outline btn--sm">Book Self-Drive</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Hyundai Venue -->
+                <div class="vehicle-card" data-category="compact-suv">
+                    <div class="vehicle-image">
+                        <img src="https://pplx-res.cloudinary.com/image/upload/v1760469632/pplx_project_search_images/0b6fe91b9d4f936a0b2ffb6afe8aba869d916bf3.png" alt="White Hyundai Venue" class="vehicle-img">
+                    </div>
+                    <div class="vehicle-info">
+                        <h4>Hyundai Venue</h4>
+                        <p class="vehicle-category">Compact SUV</p>
+                        <ul class="vehicle-features">
+                            <li><i class="fas fa-check"></i> AC</li>
+                            <li><i class="fas fa-check"></i> 5 Seater</li>
+                            <li><i class="fas fa-check"></i> Petrol</li>
+                            <li><i class="fas fa-check"></i> Modern Features</li>
+                        </ul>
+                        <div class="vehicle-price">
+                            <div class="pricing-tabs">
+                                <div class="price-tab active" data-period="daily">
+                                    <div class="price-header">Daily Rates</div>
+                                    <div class="price-grid">
+                                        <div class="price-option">
+                                            <span class="price">₹2,000<small>/12hrs</small></span>
+                                        </div>
+                                        <div class="price-option">
+                                            <span class="price">₹3,000<small>/24hrs</small></span>
+                                        </div>
+                                    </div>
+                                    <div class="km-limit">300km included daily</div>
+                                </div>
+                                <div class="price-tab" data-period="weekly">
+                                    <div class="price-header">Weekly Rate</div>
+                                    <div class="weekly-price">₹20,000<small>/7 days</small></div>
+                                    <div class="km-limit">1500km included weekly</div>
+                                </div>
+                            </div>
+                            <div class="pricing-toggle">
+                                <button class="toggle-btn active" data-period="daily">Daily</button>
+                                <button class="toggle-btn" data-period="weekly">Weekly</button>
+                            </div>
+                            <button class="btn btn--outline btn--sm">Book Self-Drive</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About/Services Section -->
+    <section id="services" class="services clearfix">
+        <div class="container">
+            <div class="section-header">
+                <h2>SERVICES &amp; FACILITIES</h2>
+                <p>Professional vehicle rental services with comprehensive support and transparent operational policies.</p>
+            </div>
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-icon">🚗</div>
+                    <h4>Self-Drive Freedom</h4>
+                    <p>Complete control over your journey with no driver dependency</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">📍</div>
+                    <h4>Multiple Locations</h4>
+                    <p>4 convenient pickup points across Rajasthan</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">💰</div>
+                    <h4>Transparent Pricing</h4>
+                    <p>Clear rates with included kilometers and no hidden charges</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">🔧</div>
+                    <h4>Quality Fleet</h4>
+                    <p>Well-maintained vehicles with comprehensive insurance</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">⏰</div>
+                    <h4>Flexible Duration</h4>
+                    <p>12-hour, daily, and weekly rental options</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">📞</div>
+                    <h4>24/7 Support</h4>
+                    <p>Round-the-clock customer assistance and roadside help</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Locations Section -->
+    <section class="locations clearfix">
+        <div class="container">
+            <div class="section-header">
+                <h2>SERVICE LOCATIONS</h2>
+                <p>Four strategically located service centers across Rajasthan for convenient vehicle pickup and return.</p>
+            </div>
+            <div class="locations-grid">
+                <div class="location-card yellow-bg">
+                    <h4>Toran Dawar Khatushyamji</h4>
+                    <p class="location-address">Toran Dawar, Khatushyamji, Sikar District, Rajasthan - 332602</p>
+                    <p class="location-phone">Phone: 7073517615</p>
+                    <div class="location-specialty">Temple visits &amp; pilgrimage trips</div>
+                </div>
+                <div class="location-card black-bg">
+                    <h4>Sawali Circle Sikar</h4>
+                    <p class="location-address">Sawali Circle, Sikar, Rajasthan - 332001</p>
+                    <p class="location-phone">Phone: 9521693497</p>
+                    <div class="location-specialty">City rentals &amp; outstation trips</div>
+                </div>
+                <div class="location-card yellow-bg">
+                    <h4>Bheru Ji Mode Reengus</h4>
+                    <p class="location-address">Bheru Ji Mode, Reengus, Sikar District, Rajasthan - 332404</p>
+                    <p class="location-phone">Phone: 7073517615</p>
+                    <div class="location-specialty">Long distance travel</div>
+                </div>
+                <div class="location-card black-bg">
+                    <h4>Sindhi Camp Jaipur</h4>
+                    <p class="location-address">Sindhi Camp, Jaipur, Rajasthan - 302001</p>
+                    <p class="location-phone">Phone: 9521693497</p>
+                    <div class="location-specialty">Airport transfers &amp; city tours</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pricing Section -->
+    <section class="pricing clearfix">
+        <div class="container">
+            <div class="section-header">
+                <h2>PRICING STRUCTURE</h2>
+                <p>Transparent pricing with comprehensive running limits and clear additional charges policy.</p>
+            </div>
+            <!-- Pricing Comparison Section -->
+            <div class="pricing-comparison-section">
+                <h3><i class="fas fa-calculator"></i> Pricing &amp; Running Limits Comparison</h3>
+                <div class="comparison-grid">
+                    <div class="comparison-card daily">
+                        <div class="comparison-header">
+                            <h4>Daily Rentals</h4>
+                            <span class="comparison-badge">12hr &amp; 24hr</span>
+                        </div>
+                        <div class="comparison-content">
+                            <div class="running-limit">
+                                <i class="fas fa-road"></i>
+                                <span>300km included per day</span>
+                            </div>
+                            <div class="extra-km">
+                                <i class="fas fa-plus-circle"></i>
+                                <span>Extra: ₹8 per km</span>
+                            </div>
+                            <div class="best-for">
+                                <i class="fas fa-thumbs-up"></i>
+                                <span>Best for: City tours, temple visits</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="comparison-card weekly featured">
+                        <div class="comparison-header">
+                            <h4>Weekly Rentals</h4>
+                            <span class="comparison-badge best-value">Best Value</span>
+                        </div>
+                        <div class="comparison-content">
+                            <div class="running-limit">
+                                <i class="fas fa-road"></i>
+                                <span>1500km included per week</span>
+                            </div>
+                            <div class="extra-km">
+                                <i class="fas fa-plus-circle"></i>
+                                <span>Extra: ₹6 per km</span>
+                            </div>
+                            <div class="best-for">
+                                <i class="fas fa-thumbs-up"></i>
+                                <span>Best for: Rajasthan tours, long trips</span>
+                            </div>
+                            <div class="savings">
+                                <i class="fas fa-piggy-bank"></i>
+                                <span>Save up to 25% vs daily rates</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="transparency-note">
+                    <i class="fas fa-shield-check"></i>
+                    <span>Complete transparency: No hidden charges, clear running limits, honest pricing</span>
+                </div>
+            </div>
+
+            <!-- Rental Requirements -->
+            <div class="requirements-section">
+                <h3>Self-Drive Requirements</h3>
+                <div class="requirements-grid">
+                    <div class="requirement-item">
+                        <i class="fas fa-id-card"></i>
+                        <span>Valid Driving License Required</span>
+                    </div>
+                    <div class="requirement-item">
+                        <i class="fas fa-shield-alt"></i>
+                        <span>Comprehensive Insurance Included</span>
+                    </div>
+                    <div class="requirement-item">
+                        <i class="fas fa-tools"></i>
+                        <span>24/7 Roadside Assistance</span>
+                    </div>
+                    <div class="requirement-item">
+                        <i class="fas fa-calculator"></i>
+                        <span>No Hidden Charges</span>
+                    </div>
+                    <div class="requirement-item">
+                        <i class="fas fa-gas-pump"></i>
+                        <span>Fuel Extra (Customer Responsibility)</span>
+                    </div>
+                    <div class="requirement-item">
+                        <i class="fas fa-piggy-bank"></i>
+                        <span>Security Deposit Required</span>
+                    </div>
+                    <div class="requirement-item">
+                        <i class="fas fa-calendar-alt"></i>
+                        <span>Age Limit: 21-65 Years</span>
+                    </div>
+                    <div class="requirement-item">
+                        <i class="fas fa-spray-can"></i>
+                        <span>Clean &amp; Sanitized Vehicles</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Us -->
+    <section id="about" class="about clearfix">
+        <div class="container">
+            <div class="about-content">
+                <div class="about-text">
+                    <h2>ABOUT ELITE BROTHERS</h2>
+                    <p>Elite Brothers is a professional self-drive vehicle rental service operating across Rajasthan. We provide well-maintained vehicles with transparent pricing and comprehensive support for independent travel.</p>
+                    <p>Our service model emphasizes customer autonomy, allowing complete freedom to explore destinations without driver dependency. We maintain four strategic service locations for convenient access across the region.</p>
+                    
+                    <div class="about-stats">
+                        <div class="stat-item">
+                            <div class="stat-number">3000+</div>
+                            <div class="stat-label">Happy Self-Drivers</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-number">4</div>
+                            <div class="stat-label">Convenient Locations</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-number">24/7</div>
+                            <div class="stat-label">Customer Support</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-number">5</div>
+                            <div class="stat-label">Vehicle Categories</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="about-features">
+                    <h3>Why Choose Elite Brothers?</h3>
+                    <div class="features-grid">
+                        <div class="feature-item">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <span>4 Strategic Locations</span>
+                        </div>
+                        <div class="feature-item">
+                            <i class="fas fa-dollar-sign"></i>
+                            <span>Transparent Pricing</span>
+                        </div>
+                        <div class="feature-item">
+                            <i class="fas fa-cog"></i>
+                            <span>Quality Fleet</span>
+                        </div>
+                        <div class="feature-item">
+                            <i class="fas fa-key"></i>
+                            <span>Self-Drive Experts</span>
+                        </div>
+                        <div class="feature-item">
+                            <i class="fas fa-route"></i>
+                            <span>Local Knowledge</span>
+                        </div>
+                        <div class="feature-item">
+                            <i class="fas fa-clock"></i>
+                            <span>Flexible Plans</span>
+                        </div>
+                        <div class="feature-item">
+                            <i class="fas fa-shield-alt"></i>
+                            <span>Insurance Covered</span>
+                        </div>
+                        <div class="feature-item">
+                            <i class="fas fa-hand-holding-usd"></i>
+                            <span>No Hidden Charges</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section class="testimonials clearfix">
+        <div class="container">
+            <div class="section-header">
+                <div class="section-badge">
+                    <i class="fas fa-quote-left"></i>
+                    <span>Customer Love</span>
+                </div>
+                <h2><span class="gradient-text">What Our Self-Drivers</span> Say</h2>
+                <p>Discover why thousands of travelers choose Elite Brothers for their self-drive adventures across Rajasthan.</p>
+            </div>
+            <div class="testimonials-grid">
+                <div class="testimonial-card">
+                    <div class="testimonial-rating">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <p>"Great self-drive experience! Clean cars and transparent pricing. Perfect for our family temple visit to Khatushyamji. Complete privacy and freedom to stop wherever we wanted."</p>
+                    <div class="testimonial-author">
+                        <strong>Rahul Sharma</strong>
+                        <span>Delhi</span>
+                    </div>
+                </div>
+                <div class="testimonial-card">
+                    <div class="testimonial-rating">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <p>"Excellent service. The Swift was in perfect condition for our self-drive trip. No driver hassles, complete freedom to explore rural Rajasthan. Will definitely rent again."</p>
+                    <div class="testimonial-author">
+                        <strong>Priya Gupta</strong>
+                        <span>Mumbai</span>
+                    </div>
+                </div>
+                <div class="testimonial-card">
+                    <div class="testimonial-rating">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <p>"Professional service and well-maintained Thar for our self-drive adventure. Great experience driving through rural Rajasthan with complete freedom and privacy."</p>
+                    <div class="testimonial-author">
+                        <strong>Amit Agarwal</strong>
+                        <span>Gurgaon</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact clearfix">
+        <div class="container">
+            <div class="contact-content">
+                <div class="contact-info">
+                    <div class="section-badge">
+                        <i class="fas fa-headset"></i>
+                        <span>24/7 Support</span>
+                    </div>
+                    <h2><span class="gradient-text">Get in Touch</span></h2>
+                    <p>Ready to book your self-drive vehicle? Contact us for instant quotes and availability across our 4 locations.</p>
+                    
+                    <div class="contact-details">
+                        <div class="contact-item">
+                            <i class="fas fa-phone"></i>
+                            <div>
+                                <strong>Phone Numbers</strong>
+                                <p><a href="tel:+917073517615">+91-70735-17615</a><br>
+                                <a href="tel:+919521693497">+91-95216-93497</a></p>
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-envelope"></i>
+                            <div>
+                                <strong>Email</strong>
+                                <p><a href="mailto:himanshuyogi293@gmail.com">himanshuyogi293@gmail.com</a></p>
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <div>
+                                <strong>Our Locations</strong>
+                                <p>• Toran Dawar Khatushyamji<br>
+                                • Sawali Circle Sikar<br>
+                                • Bheru Ji Mode Reengus<br>
+                                • Sindhi Camp Jaipur</p>
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-clock"></i>
+                            <div>
+                                <strong>Business Hours</strong>
+                                <p>24/7 Available for Bookings</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="nearby-attractions">
+                        <h3>Popular Self-Drive Routes</h3>
+                        <div class="attractions-list">
+                            <span class="attraction-tag">Jaipur to Khatushyamji (65 KM)</span>
+                            <span class="attraction-tag">Sikar to Jaipur (110 KM)</span>
+                            <span class="attraction-tag">Reengus to Sikar (25 KM)</span>
+                            <span class="attraction-tag">Khatushyamji Temple Tour</span>
+                            <span class="attraction-tag">Rajasthan Heritage Circuit</span>
+                            <span class="attraction-tag">Desert Safari Routes</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="contact-form-container">
+                    <div class="card">
+                        <div class="card__body">
+                            <div class="contact-form-header">
+                                <h3><i class="fas fa-paper-plane"></i> Send us a Message</h3>
+                                <p>We'll respond within 30 minutes</p>
+                            </div>
+                            <form id="contactForm" class="contact-form">
+                                <div class="form-group">
+                                    <label class="form-label">Full Name</label>
+                                    <input type="text" class="form-control" id="contactName" required>
+                                </div>
+                                <div class="form-row">
+                                    <div class="form-group">
+                                        <label class="form-label">Phone</label>
+                                        <input type="tel" class="form-control" id="contactPhone" required>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="form-label">Email</label>
+                                        <input type="email" class="form-control" id="contactEmail">
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label class="form-label">Service Required</label>
+                                    <select class="form-control" id="serviceType" required>
+                                        <option value="">Select Service</option>
+                                        <option value="self-drive-12hr">Self-Drive 12 Hours</option>
+                                        <option value="self-drive-24hr">Self-Drive 24 Hours</option>
+                                        <option value="self-drive-weekly">Self-Drive Weekly</option>
+                                        <option value="self-drive-monthly">Self-Drive Monthly</option>
+                                        <option value="airport-pickup">Airport Self-Drive Pickup</option>
+                                        <option value="outstation">Outstation Self-Drive</option>
+                                    </select>
+                                </div>
+                                <div class="form-group">
+                                    <label class="form-label">Message</label>
+                                    <textarea class="form-control" id="contactMessage" rows="4" placeholder="Tell us about your self-drive requirements, pickup location, dates, etc..."></textarea>
+                                </div>
+                                <button type="submit" class="btn btn--primary btn--full-width btn--lg">
+                                    <i class="fas fa-paper-plane"></i>
+                                    <span>Send Message</span>
+                                </button>
+                                <div class="contact-guarantee">
+                                    <i class="fas fa-clock"></i>
+                                    <span>Quick response guaranteed • Usually within 30 minutes</span>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h2>ELITE BROTHERS</h2>
+                    <p>Professional self-drive vehicle rental services across Rajasthan with transparent pricing and comprehensive support.</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#vehicles">Vehicles</a></li>
+                        <li><a href="#services">Services</a></li>
+                        <li><a href="#about">About Us</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Services</h4>
+                    <ul>
+                        <li><a href="#vehicles">Bike Rentals</a></li>
+                        <li><a href="#vehicles">Car Rentals</a></li>
+                        <li><a href="#vehicles">SUV Rentals</a></li>
+                        <li><a href="#vehicles">Tempo Travellers</a></li>
+                        <li><a href="#services">Temple Tours</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>CONTACT INFORMATION</h4>
+                    <div class="footer-contact">
+                        <p>Phone: +91-70735-17615</p>
+                        <p>Phone: +91-95216-93497</p>
+                        <p>Email: himanshuyogi293@gmail.com</p>
+                        <p>Service Areas: 4 Locations across Rajasthan</p>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <div class="footer-bottom-content">
+                    <p style="color: var(--color-yellow-secondary);">&copy; 2025 Elite Brothers. All rights reserved.</p>
+                    <div class="footer-links">
+                        <a href="#" onclick="showModal('termsModal')">Terms &amp; Conditions</a>
+                        <a href="#" onclick="showModal('privacyModal')">Privacy Policy</a>
+                        <a href="#" onclick="showModal('cancellationModal')">Cancellation Policy</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Modals -->
+    <div id="termsModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>Self-Drive Terms &amp; Conditions</h3>
+                <span class="modal-close" onclick="hideModal('termsModal')">&times;</span>
+            </div>
+            <div class="modal-body">
+                <h4>Self-Drive Rental Terms</h4>
+                <ul>
+                    <li>No drivers provided. Customer drives themselves.</li>
+                    <li>Valid driving license required for all renters.</li>
+                    <li>Minimum age: 21 years for self-drive cars &amp; SUVs.</li>
+                    <li>Security deposit required as per vehicle category (refundable).</li>
+                    <li>Fuel is extra; customer responsible for refuelling.</li>
+                    <li>Toll, parking, and permit charges extra if applicable.</li>
+                </ul>
+                <h4>Booking &amp; Payment</h4>
+                <ul>
+                    <li>Advance booking recommended, especially during peak seasons</li>
+                    <li>Payment accepted: Cash, UPI, Card</li>
+                    <li>Cancellation charges apply as per policy</li>
+                    <li>Late return charges: ₹500 per day</li>
+                </ul>
+                <h4>Vehicle Condition &amp; Responsibilities</h4>
+                <ul>
+                    <li>Customer responsible for any damage during rental period</li>
+                    <li>Report any issues immediately</li>
+                    <li>Return vehicle in same clean condition as received</li>
+                    <li>No smoking or drinking alcohol in vehicles</li>
+                    <li>Comprehensive insurance covers standard risks for self-drive customers</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div id="privacyModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>Privacy Policy</h3>
+                <span class="modal-close" onclick="hideModal('privacyModal')">&times;</span>
+            </div>
+            <div class="modal-body">
+                <h4>Information Collection</h4>
+                <p>We collect personal information including name, phone number, email, and driving license details for rental services.</p>
+                <h4>Information Use</h4>
+                <p>Your information is used solely for providing rental services, communication, and service improvement.</p>
+                <h4>Information Protection</h4>
+                <p>We implement appropriate security measures to protect your personal information against unauthorized access.</p>
+                <h4>Information Sharing</h4>
+                <p>We do not sell, trade, or share your personal information with third parties except as required by law.</p>
+                <h4>Contact</h4>
+                <p>For privacy concerns, contact us at bookings@regalbrothers.com</p>
+            </div>
+        </div>
+    </div>
+
+    <div id="cancellationModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>Cancellation Policy</h3>
+                <span class="modal-close" onclick="hideModal('cancellationModal')">&times;</span>
+            </div>
+            <div class="modal-body">
+                <h4>Cancellation Charges</h4>
+                <ul>
+                    <li><strong>More than 24 hours:</strong> No cancellation charges</li>
+                    <li><strong>12-24 hours:</strong> 25% of rental amount</li>
+                    <li><strong>6-12 hours:</strong> 50% of rental amount</li>
+                    <li><strong>Less than 6 hours:</strong> 100% of rental amount</li>
+                </ul>
+                <h4>Refund Process</h4>
+                <ul>
+                    <li>Refunds processed within 3-5 business days</li>
+                    <li>Amount credited to original payment method</li>
+                    <li>Security deposit refunded separately after vehicle inspection</li>
+                </ul>
+                <h4>Force Majeure</h4>
+                <p>No cancellation charges for cancellations due to natural disasters, strikes, or government restrictions.</p>
+            </div>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
