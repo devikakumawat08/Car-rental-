@@ -105,15 +105,16 @@ function initializeBookingForm() {
             // Get form data
             const formData = {
                 pickupLocation: document.getElementById('pickupLocation').value,
-                dropLocation: document.getElementById('dropLocation').value,
+                returnLocation: document.getElementById('pickupLocation').value, // Same as pickup
                 pickupDate: document.getElementById('pickupDate').value,
                 returnDate: document.getElementById('returnDate').value,
                 pickupTime: document.getElementById('pickupTime').value,
+                returnTime: document.getElementById('returnTime')?.value || formData.pickupTime,
                 vehicleType: document.getElementById('vehicleType').value
             };
             
             // Validate form
-            if (!formData.pickupLocation || !formData.dropLocation || !formData.pickupDate || 
+            if (!formData.pickupLocation || !formData.pickupDate || 
                 !formData.returnDate || !formData.pickupTime || !formData.vehicleType) {
                 showNotification('Please fill in all required fields to check self-drive availability', 'error');
                 return;
@@ -153,13 +154,13 @@ function initializeBookingForm() {
                     }
                 }
                 
-                showNotification(`Great! We have ${getVehicleTypeName(formData.vehicleType)} available for ${daysDiff} day(s). ${kmLimitInfo}. Our team will contact you shortly.`, 'success');
+                showNotification(`Great! ${getVehicleTypeName(formData.vehicleType)} available for ${daysDiff} day(s) at ${getLocationName(formData.pickupLocation)}. ${kmLimitInfo}. Same-location return required.`, 'success');
                 
                 // Generate booking reference
                 const bookingRef = 'EB' + Date.now().toString().slice(-6);
                 
                 setTimeout(() => {
-                    alert(`Self-Drive Booking Reference: ${bookingRef}\n\nVehicle: ${getVehicleTypeName(formData.vehicleType)}\nPickup: ${formData.pickupLocation} on ${formData.pickupDate}\nReturn: ${formData.dropLocation} on ${formData.returnDate}\nDuration: ${daysDiff} day(s)\n\n${pricingInfo}\n${kmLimitInfo}\nExtra KM: ₹8 per km (daily) / ₹6 per km (weekly)\n\n** SELF-DRIVE RENTAL - NO DRIVER PROVIDED **\nYou will drive the vehicle yourself.\n\nRequired Documents:\n• Valid Driving License\n• Aadhar Card/Government ID\n• Security Deposit\n\nOur team will call you within 30 minutes to confirm booking details.`);
+                    alert(`Self-Drive Booking Reference: ${bookingRef}\n\nVehicle: ${getVehicleTypeName(formData.vehicleType)}\nLocation: ${getLocationName(formData.pickupLocation)}\nPickup: ${formData.pickupDate} at ${formData.pickupTime}\nReturn: ${formData.returnDate} at ${formData.returnTime || formData.pickupTime}\nDuration: ${daysDiff} day(s)\n\n${pricingInfo}\n${kmLimitInfo}\nExtra KM: ₹8 per km (daily) / ₹6 per km (weekly)\n\n** SAME-LOCATION RETURN POLICY **\nVehicle MUST be returned to ${getLocationName(formData.pickupLocation)}\nOne-way rentals are not available.\n\n** SELF-DRIVE RENTAL - NO DRIVER PROVIDED **\nYou will drive the vehicle yourself.\n\nRequired Documents:\n• Valid Driving License\n• Aadhar Card/Government ID\n• Security Deposit\n\nOur team will call you within 30 minutes to confirm booking details.`);
                 }, 2000);
             }, 1500);
         });
@@ -211,12 +212,23 @@ function getVehicleTypeName(type) {
     const types = {
         'swift-new': 'New Swift',
         'swift-old': 'Old Swift',
+        'dzire': 'Swift Dzire',
         'swift-dzire': 'Swift Dzire',
         'thar': 'Mahindra Thar',
         'scorpio': 'Mahindra Scorpio',
         'venue': 'Hyundai Venue'
     };
     return types[type] || type;
+}
+
+function getLocationName(locationId) {
+    const locations = {
+        'khatushyamji': 'Toran Dawar Khatushyamji',
+        'sikar': 'Sawali Circle Sikar',
+        'reengus': 'Bheru Ji Mode Reengus',
+        'jaipur': 'Sindhi Camp Jaipur'
+    };
+    return locations[locationId] || locationId;
 }
 
 function getVehiclePricing(vehicleType, period = 'daily') {
@@ -885,6 +897,25 @@ function initializeRunningLimitsDisplay() {
     });
 }
 
+// Google Form Button Tracking
+function initializeGoogleFormButtons() {
+    const googleFormButtons = document.querySelectorAll('.btn--google-form');
+    
+    googleFormButtons.forEach(button => {
+        button.addEventListener('click', (e) => {
+            // Show notification when clicking Google Form button
+            showNotification('Opening Google Form... Please fill in all details for faster response!', 'info');
+            
+            // Track button click location for analytics
+            const buttonLocation = button.closest('.hero-cta') ? 'Hero Section' : 
+                                 button.closest('.google-form-cta') ? 'Contact Section' :
+                                 button.closest('.footer-google-form') ? 'Footer' : 'Unknown';
+            
+            console.log(`Google Form opened from: ${buttonLocation}`);
+        });
+    });
+}
+
 // Initialize all functionality when DOM is loaded
 document.addEventListener('DOMContentLoaded', () => {
     initializeNavigation();
@@ -906,6 +937,7 @@ document.addEventListener('DOMContentLoaded', () => {
     initializeEnhancedFeatures();
     optimizePerformance();
     initializeRunningLimitsDisplay();
+    initializeGoogleFormButtons();
     
     // Set current date as default for booking form
     const today = new Date().toISOString().split('T')[0];
@@ -921,10 +953,15 @@ document.addEventListener('DOMContentLoaded', () => {
     
     console.log('Elite Brothers self-drive website with yellow-black theme and car animations initialized successfully!');
     
-    // Show welcome message with pricing transparency
+    // Show welcome message with same-location policy
     setTimeout(() => {
-        showNotification('🚗 Welcome to Elite Brothers! Experience our yellow-black themed automotive website with dynamic car animations!', 'info');
+        showNotification('🚗 Welcome to Elite Brothers! Same-location return policy applies to all rentals.', 'info');
     }, 3000);
+    
+    // Show Google Form reminder after 10 seconds
+    setTimeout(() => {
+        showNotification('📝 Need quick booking? Use our "Send Us a Message" button to fill our Google Form!', 'info');
+    }, 10000);
     
     // Initialize car animations
     initializeCarAnimations();
